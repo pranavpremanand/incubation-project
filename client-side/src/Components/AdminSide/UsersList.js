@@ -1,13 +1,18 @@
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { hideLoading, showLoading } from "../../Redux/AlertsSlice";
 
 function UsersList() {
+  const dispatch = useDispatch()
   const [users, setUsers] = useState([]);
   useEffect(() => {
+    dispatch(showLoading())
     axios({
       method: "get",
       url: "/admin/get-users",
     }).then((response) => {
+      dispatch(hideLoading())
       setUsers(response.data.data);
     });
   }, []);

@@ -1,23 +1,29 @@
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { hideLoading, showLoading } from "../../Redux/AlertsSlice";
 
 function Booking() {
+  const dispatch = useDispatch()
   const [slots, setSlots] = useState([]);
   const [applications,setApplications] = useState([]);
   const [slotId,setSlotId] = useState();
   
   //Route to get slots data
   const getData = () => {
+    dispatch(showLoading())
     axios({
       url: "/admin/slots",
       method: "get",
     })
       .then((response) => {
+        dispatch(hideLoading())
         setSlots(response.data.data);
         setApplications(response.data.applications)
         console.log("Success");
       })
       .catch((err) => {
+        dispatch(hideLoading())
         console.log(err);
       });
   };
@@ -29,14 +35,17 @@ function Booking() {
 
   //Add slot
   const addSlot = async () => {
+    dispatch(showLoading())
     axios({
       url: "/admin/add-slot",
       method: "get",
     })
       .then((response) => {
+        dispatch(hideLoading())
         setSlots(response.data.data);
       })
       .catch((err) => {
+        dispatch(hideLoading())
         console.log(err);
       });
   };
@@ -44,6 +53,7 @@ function Booking() {
   //Book slot
   const bookSlot = (id) =>{
     console.log(slotId);
+    dispatch(showLoading())
     axios({
         url:'/admin/book-slot',
         method:'post',
@@ -52,9 +62,10 @@ function Booking() {
             slotId:slotId
         }
     }).then(response=>{
+      dispatch(hideLoading())
         getData();
     }).catch(err=>{
-        alert(err,'error')
+      dispatch(hideLoading())
     })
     
   }
