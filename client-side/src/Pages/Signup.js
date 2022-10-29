@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form, Button, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -16,7 +16,6 @@ function Signup() {
       dispatch(hideLoading)
       if (response.data.success) {
         toast.success(response.data.message);
-        // toast('Redirecting to login page')
         navigate("/login");
       } else {
         toast.error(response.data.message);
@@ -25,10 +24,7 @@ function Signup() {
       dispatch(hideLoading)
       toast.error("Something went wrong.");
     }
-    // console.log(values)
   };
-  const [form, setForm] = useState({});
-  const addUser = () => {};
   return (
     <div className="background">
       <div className="authentication">

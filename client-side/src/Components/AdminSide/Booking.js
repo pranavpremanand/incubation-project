@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
-import toast from "react-hot-toast";
 
 function Booking() {
   const [slots, setSlots] = useState([]);
   const [applications,setApplications] = useState([]);
   const [slotId,setSlotId] = useState();
+  
   //Route to get slots data
   const getData = () => {
     axios({
