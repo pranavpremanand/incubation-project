@@ -1,0 +1,118 @@
+/* body { */
+  /* margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap');
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* antd override */
+input{
+  border-radius: 0;
+  border: 1px solid rgba(128, 128, 128, 0.521) !important;
+  height: 40px;
+}
+input:focus{
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid gray !important;
+}
+label{
+  font-size: 16px !important;
+  color: black;
+}
+.ant-form-item{
+  margin:10px 0 !important;
+}
+.primary-button{
+  background-color: #3d86ab !important;
+  border-color: #3d86ab !important;
+  height: 40px !important;
+  width: 100% !important;
+  color: white !important;
+  font-size: 16px !important;
+  /* font-weight: bold !important; */
+}
+.anchor{
+  color:black !important;
+  text-decoration: underline !important;
+  font-size:16px !important;
+}
+.anchor:hover{
+  text-decoration: underline !important;
+}
+/* COMMON STYLING */
+.spinner-parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(0, 0, 0, 0.475);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+}
+.spinner-border{
+  width: 3rem;
+  height: 3rem;
+  color: white;
+}
+.card{
+  box-shadow: 0 0 2px gray;
+  border-radius: 0 !important;
+}
+.normal-text{
+  font-size: 1rem;
+}
+.card-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* authentication pages */
+.authentication{
+  height: 100vh;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(6, 25, 46);
+}
+/* .authentication-card{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+.authentication-form{
+  width: 400px;
+}
+.authentication .card-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: red;
+  color: white !important;
+  max-width: max-content !important;
+  padding: 7px 15px;
+  margin-left: -40px;
+}
+/* .background{
+  background-image: url("https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/12/Gradient_builder_2.jpg?auto=format&q=60&fit=max&w=930");
+  background-size: cover;
+}
+.authentication-card{
+  background-color:rgba(125, 79, 198, 0.183) ;
+} */
