@@ -16,16 +16,16 @@ function SideBar() {
         <h4 class="col text-light">
           <u>Admin</u>
         </h4>
-        <h6 class="col" onClick={() => navigate("/admin/home")}>
+        <h6 class="col mb-3" onClick={() => navigate("/admin/home")}>
           Applications
         </h6>
         {/* <h6 class="" onClick={() => navigate("/admin/record-list")}>
             Records
           </h6> */}
-        <h6 class="col" onClick={() => navigate("/admin/users")}>
+        <h6 class="col mb-3" onClick={() => navigate("/admin/users")}>
           Users
         </h6>
-        <h6 class="col" onClick={() => navigate("/admin/booking-slots")}>
+        <h6 class="col mb-3" onClick={() => navigate("/admin/booking-slots")}>
           Book slots
         </h6>
         <h6 class="col" onClick={logout}>

@@ -31,7 +31,7 @@ function AdminLogin() {
     }
   };
   return (
-    <div className="background">
+    <div className="background"  style={{height:'100%'}}>
       <div className="authentication">
         <div className="authentication-form card p-3">
           <h1 className="card-title">Admin Login</h1>
