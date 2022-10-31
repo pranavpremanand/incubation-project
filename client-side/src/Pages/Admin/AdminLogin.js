@@ -33,7 +33,7 @@ function AdminLogin() {
   return (
     <div className="background"  style={{height:'100%'}}>
       <div className="authentication">
-        <div className="authentication-form card p-3">
+        <div className="authentication-form card p-3 col-8">
           <h1 className="card-title">Admin Login</h1>
           <Form layout="vertical" onFinish={onFinish}>
             <Form.Item label="Email" name="email">

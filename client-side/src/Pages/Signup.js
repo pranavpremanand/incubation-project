@@ -28,7 +28,7 @@ function Signup() {
   return (
     <div className="background">
       <div className="authentication">
-        <div className="authentication-form card p-3">
+        <div className="authentication-form card p-3 col-8">
           <h1 className="card-title">Signup</h1>
           <Form layout="vertical" onFinish={onFinish}>
             <Form.Item label="Name" name="name">

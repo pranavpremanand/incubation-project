@@ -13,15 +13,12 @@ function SideBar() {
   return (
     <Fragment>
       <div class="mt-5">
-        <h4 class="col text-light">
-          <u>Admin</u>
+        <h4 class="col text-light fw-bold">
+          <u>ADMIN</u>
         </h4>
         <h6 class="col mb-3" onClick={() => navigate("/admin/home")}>
           Applications
         </h6>
-        {/* <h6 class="" onClick={() => navigate("/admin/record-list")}>
-            Records
-          </h6> */}
         <h6 class="col mb-3" onClick={() => navigate("/admin/users")}>
           Users
         </h6>
