@@ -11,17 +11,21 @@ function Signup() {
   const navigate = useNavigate();
   const onFinish = async (values) => {
     try {
-      dispatch(showLoading)
-      const response = await axios.post("/api/user/signup", values);
-      dispatch(hideLoading)
-      if (response.data.success) {
-        toast.success(response.data.message);
-        navigate("/login");
+      if (!values.email || !values.password || !values.name || !values.phone) {
+        toast.error("All fields are required.");
       } else {
-        toast.error(response.data.message);
+        dispatch(showLoading);
+        const response = await axios.post("/api/user/signup", values);
+        dispatch(hideLoading);
+        if (response.data.success) {
+          toast.success(response.data.message);
+          navigate("/login");
+        } else {
+          toast.error(response.data.message);
+        }
       }
     } catch (error) {
-      dispatch(hideLoading)
+      dispatch(hideLoading);
       toast.error("Something went wrong.");
     }
   };

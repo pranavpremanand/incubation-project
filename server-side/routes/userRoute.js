@@ -33,15 +33,15 @@ router.post("/signup", (req, res, next) => {
 //LOGIN
 router.post("/login", async (req, res, next) => {
   try {
-    userHelper.doLogin(req.body).then((response) => {
-      if (response.status) {
-        const token = jwt.sign(
-          { id: response.user._id },
-          process.env.JWT_SECRET,
-          { expiresIn: "1d" }
-        );
-        res
-          .status(200)
+      userHelper.doLogin(req.body).then((response) => {
+        if (response.status) {
+          const token = jwt.sign(
+            { id: response.user._id },
+            process.env.JWT_SECRET,
+            { expiresIn: "1d" }
+            );
+            res
+            .status(200)
           .send({ message: "Login success", success: true, data:token});
       } else if (response.failed) {
         res
@@ -51,8 +51,8 @@ router.post("/login", async (req, res, next) => {
         res
           .status(200)
           .send({ message: "User does not exist", success: false });
-      }
-    });
+        }
+      });
   } catch (err) {
     console.log("Error",err);
     res.status(500).send({ message: "Error logging in", success: false });

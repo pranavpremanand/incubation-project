@@ -11,6 +11,10 @@ function Login() {
   const navigate = useNavigate();
   const onFinish = async (values) => {
     try {
+      if(!values.email || !values.password){
+        toast.error("All fields are required.");
+      }else{
+      console.log('values',values)
       dispatch(showLoading());
       const response = await axios.post("/api/user/login", values);
       dispatch(hideLoading());
@@ -21,6 +25,7 @@ function Login() {
       } else {
         toast.error(response.data.message);
       }
+    }
     } catch (error) {
       dispatch(hideLoading())
       toast.error("Something went wrong.");
